@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/registro.css">
+    <title>cuentas</title>
+</head>
+<body>
+
+    <div class="navbar">   
+        <a href='/cuentas/<%= id %>' >Cuentas</a>
+        <a href="transferencia">Transferencias</a>
+        <a href='/estado_cuenta' >Estados de Cuenta</a>
+        <a href='/' >Salir</a>
+    </div>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id Cuenta</th>
+                    <th>Tipo cuenta</th>
+                    <th>Saldo</th>
+                    <th>Id_usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (rowsConsultac) { %>
+                    <% rowsConsultac.forEach(rCuentas => { %>
+                        <tr>
+                            <td><%= rCuentas[0] %></td>
+                            <td><%= rCuentas[1] %></td>
+                            <td><%= rCuentas[2] %></td>
+                            <td><%= rCuentas[3] %></td>
+
+                        </tr>
+                    <% }); %>
+                <% } %>
+            </tbody>
+        </table>
+    </div> 
+</body>
+</body>
+
+</html>

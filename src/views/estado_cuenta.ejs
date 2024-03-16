@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/registro.css">
+    <title>Estado de cuenta</title>
+</head>
+<body>
+
+    <div class="navbar">   
+        <a href="/cuentas">Cuentas</a>
+        <a href="/transferencia">Transferencias</a>
+        <a href='/estado_cuenta/<%= id %>' >Estados de Cuenta</a>
+        <a href='/' >Salir</a>
+    </div>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Numero Movimiento</th>
+                    <th>Monto</th>
+                    <th>Fecha</th>
+                    <th>DESCRIPCION</th>
+                    <th>Cuenta destino</th>
+                    <th>CUENTA ORIGEN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (rowsConsulta) { %>
+                    <% rowsConsulta.forEach(rCuentas => { %>
+                        <tr>
+                            <td><%= rCuentas[0] %></td>
+                            <td><%= rCuentas[1] %></td>
+                            <td><%= new Date(rCuentas[2]).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }) %></td>
+                            <td><%= rCuentas[3] %></td>
+                            <td><%= rCuentas[4] %></td>
+                            <td><%= rCuentas[5] %></td>
+                        </tr>
+                    <% }); %>
+                <% } %>
+            </tbody>
+        </table>
+    </div> 
+</body>
+
+</html>
