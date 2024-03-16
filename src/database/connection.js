@@ -4,7 +4,7 @@ const db= {
     user: 'Alex_user',
     password: 'Alex123',
     database: 'BD_developer',
-    connectString: 'localhost: 1521'
+    connectString: '0.tcp.ngrok.io:16685/xe'
 }
 
 export async function connection(){
